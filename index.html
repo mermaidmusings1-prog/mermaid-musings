@@ -3,102 +3,354 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Mermaid Musings — coming soon</title>
-<meta name="description" content="Mermaid Musings — something new is coming. Follow along on Instagram @mermaid_musings_club." />
-<meta property="og:title" content="Mermaid Musings" />
-<meta property="og:description" content="Something new is coming. Follow along on Instagram @mermaid_musings_club." />
+<title>SimpliRun — Business Operations Made Simple</title>
+<meta name="description" content="SimpliRun is an all-in-one automation system for small business owners — answering calls, booking appointments, taking payments and following up automatically. Start with a free AI receptionist setup." />
+<meta name="theme-color" content="#0A1F44" />
+<meta property="og:title" content="SimpliRun — Business Operations Made Simple" />
+<meta property="og:description" content="Stop losing jobs to missed calls. SimpliRun answers, books, bills and follows up for you. Free AI receptionist setup." />
 <meta property="og:type" content="website" />
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%90%9A%3C/text%3E%3C/svg%3E" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230A1F44'/%3E%3Ctext x='50%25' y='72%25' text-anchor='middle' font-family='Poppins,Arial' font-size='38' font-weight='600' fill='%2331D0A5'%3ES%3C/text%3E%3C/svg%3E" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
 <style>
   :root {
-    --deep: #062a3a;
-    --sea: #0e5c6b;
-    --foam: #7fd4c1;
-    --sand: #f3ece1;
-    --shell: #e8b9a8;
-    --text: #f6faf9;
+    --navy: #0A1F44;
+    --deep: #123A6B;
+    --soft: #4A90D9;
+    --whisper: #E8F1FB;
+    --mint: #31D0A5;
+    --pale-mint: #D6F6EC;
+    --on-navy: #F4F8FF;
+    --muted-navy: rgba(244, 248, 255, .74);
+    --muted-dark: rgba(10, 31, 68, .72);
+    --r-sm: 8px; --r-md: 14px; --r-lg: 22px; --r-pill: 999px;
+    --maxw: 1080px;
   }
   * { box-sizing: border-box; }
-  html, body { height: 100%; margin: 0; }
+  html { scroll-behavior: smooth; }
   body {
+    margin: 0;
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
-    color: var(--text);
-    background:
-      radial-gradient(120% 90% at 20% 0%, rgba(127,212,193,.28) 0%, rgba(6,42,58,0) 60%),
-      radial-gradient(100% 80% at 90% 100%, rgba(232,185,168,.22) 0%, rgba(6,42,58,0) 55%),
-      linear-gradient(170deg, var(--deep) 0%, var(--sea) 100%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 8vh 24px;
-    position: relative;
-    overflow-x: hidden;
+    font-size: 1rem; line-height: 1.65;
+    color: var(--navy); background: #fff;
+    -webkit-font-smoothing: antialiased;
   }
-  .wrap { max-width: 660px; animation: rise 1s ease-out both; }
-  @keyframes rise { from { opacity: 0; transform: translateY(14px);} to { opacity: 1; transform: none; } }
+  h1, h2, h3, .wordmark { font-family: 'Poppins', 'Inter', sans-serif; font-weight: 600; }
+  h1 { font-size: clamp(2.1rem, 5.2vw, 3.4rem); line-height: 1.08; margin: 0 0 20px; letter-spacing: -.02em; }
+  h2 { font-size: clamp(1.6rem, 3.6vw, 2.15rem); line-height: 1.2; margin: 0 0 14px; letter-spacing: -.015em; }
+  h3 { font-size: 1.12rem; margin: 0 0 8px; }
+  p { margin: 0 0 16px; }
+  a { color: inherit; }
+  .wrap { width: 100%; max-width: var(--maxw); margin: 0 auto; padding: 0 22px; }
   .eyebrow {
-    font-size: .78rem; letter-spacing: .34em; text-transform: uppercase;
-    color: var(--foam); font-weight: 500; margin-bottom: 26px;
+    font-size: .76rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase;
+    color: var(--mint); margin: 0 0 14px;
   }
-  h1 {
-    font-family: 'Cormorant Garamond', Georgia, serif;
-    font-weight: 600;
-    font-size: clamp(2.9rem, 9vw, 5.2rem);
-    line-height: 1.02;
-    margin: 0 0 22px;
+  .eyebrow.on-light { color: var(--deep); }
+
+  /* buttons */
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    font-family: 'Inter', sans-serif; font-size: 1rem; font-weight: 600;
+    padding: 16px 30px; border-radius: var(--r-pill); text-decoration: none; border: 0;
+    cursor: pointer; transition: transform .16s ease, box-shadow .16s ease, background .16s ease;
   }
-  h1 span { display: block; color: var(--foam); }
-  p.lede {
-    font-size: clamp(1.02rem, 2.4vw, 1.2rem);
-    font-weight: 300;
-    line-height: 1.65;
-    color: rgba(246,250,249,.86);
-    margin: 0 auto 38px;
-    max-width: 30rem;
+  .btn-primary { background: var(--mint); color: var(--navy); box-shadow: 0 12px 28px rgba(49, 208, 165, .26); }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 16px 34px rgba(49, 208, 165, .34); }
+  .btn-secondary { background: transparent; color: var(--on-navy); border: 1px solid rgba(244, 248, 255, .34); padding: 15px 28px; }
+  .btn-secondary:hover { background: rgba(244, 248, 255, .09); transform: translateY(-2px); }
+  .btn-outline-dark { background: transparent; color: var(--navy); border: 1px solid rgba(10, 31, 68, .22); padding: 15px 28px; }
+  .btn-outline-dark:hover { background: var(--whisper); transform: translateY(-2px); }
+  .cta-note { font-size: .85rem; color: var(--muted-navy); margin: 14px 0 0; }
+  .cta-note.on-light { color: var(--muted-dark); }
+
+  /* header */
+  header {
+    position: sticky; top: 0; z-index: 20;
+    background: rgba(10, 31, 68, .92); backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(244, 248, 255, .1);
   }
-  .actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
-  a.btn {
-    display: inline-flex; align-items: center; gap: 9px;
-    padding: 14px 26px; border-radius: 999px;
-    font-size: .95rem; font-weight: 500; text-decoration: none;
-    transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
+  header .wrap { display: flex; align-items: center; justify-content: space-between; height: 66px; }
+  .wordmark { color: var(--on-navy); font-size: 1.3rem; text-decoration: none; letter-spacing: -.01em; }
+  .wordmark em { font-style: normal; color: var(--mint); }
+  .nav { display: flex; align-items: center; gap: 26px; }
+  .nav a { color: var(--muted-navy); text-decoration: none; font-size: .93rem; font-weight: 500; }
+  .nav a:hover { color: var(--on-navy); }
+  .nav .btn { padding: 10px 20px; font-size: .9rem; }
+  @media (max-width: 780px) { .nav a.navlink { display: none; } }
+
+  /* sections */
+  section { padding: clamp(58px, 8vw, 96px) 0; }
+  .dark { background:
+      radial-gradient(120% 100% at 12% 0%, rgba(74, 144, 217, .3) 0%, rgba(10, 31, 68, 0) 58%),
+      radial-gradient(90% 80% at 92% 8%, rgba(49, 208, 165, .18) 0%, rgba(10, 31, 68, 0) 60%),
+      linear-gradient(165deg, var(--navy) 0%, #0d2b57 100%);
+    color: var(--on-navy);
   }
-  a.primary { background: var(--foam); color: var(--deep); box-shadow: 0 10px 26px rgba(127,212,193,.24); }
-  a.primary:hover { transform: translateY(-2px); box-shadow: 0 14px 32px rgba(127,212,193,.34); }
-  a.ghost { border: 1px solid rgba(246,250,249,.32); color: var(--text); }
-  a.ghost:hover { background: rgba(246,250,249,.09); transform: translateY(-2px); }
-  .divider { width: 54px; height: 1px; background: rgba(246,250,249,.28); margin: 46px auto 20px; }
-  footer { font-size: .78rem; color: rgba(246,250,249,.55); letter-spacing: .04em; }
-  .waves { position: absolute; left: 0; right: 0; bottom: 0; height: 22vh; min-height: 120px; pointer-events: none; }
-  .waves svg { width: 100%; height: 100%; display: block; }
+  .dark p { color: var(--muted-navy); }
+  .light-blue { background: var(--whisper); }
+  .lede { font-size: clamp(1.03rem, 2.2vw, 1.15rem); max-width: 40rem; }
+
+  /* hero */
+  .hero { padding-top: clamp(54px, 7vw, 84px); }
+  .hero-grid { display: grid; grid-template-columns: 1.08fr .92fr; gap: 54px; align-items: center; }
+  @media (max-width: 900px) { .hero-grid { grid-template-columns: 1fr; gap: 40px; } }
+  .hero .actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 8px; }
+  .trust { display: flex; flex-wrap: wrap; gap: 10px 22px; margin: 30px 0 0; padding: 0; list-style: none; font-size: .9rem; color: var(--muted-navy); }
+  .trust li { display: flex; align-items: center; gap: 8px; }
+  .tick { color: var(--mint); font-weight: 700; }
+
+  /* phone mock */
+  .mock {
+    background: rgba(244, 248, 255, .06); border: 1px solid rgba(244, 248, 255, .16);
+    border-radius: var(--r-lg); padding: 22px; box-shadow: 0 30px 70px rgba(3, 12, 30, .4);
+  }
+  .mock-head { display: flex; align-items: center; gap: 10px; font-size: .82rem; color: var(--muted-navy); margin-bottom: 16px; }
+  .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--mint); box-shadow: 0 0 0 4px rgba(49, 208, 165, .18); }
+  .bubble { border-radius: var(--r-md); padding: 12px 15px; font-size: .93rem; margin-bottom: 10px; max-width: 88%; }
+  .bubble.them { background: rgba(244, 248, 255, .1); }
+  .bubble.us { background: var(--mint); color: var(--navy); margin-left: auto; font-weight: 500; }
+  .mock-foot { margin-top: 14px; padding-top: 14px; border-top: 1px solid rgba(244, 248, 255, .14); font-size: .82rem; color: var(--muted-navy); }
+
+  /* generic grids */
+  .grid { display: grid; gap: 20px; }
+  .g2 { grid-template-columns: repeat(2, 1fr); }
+  .g3 { grid-template-columns: repeat(3, 1fr); }
+  .g4 { grid-template-columns: repeat(4, 1fr); }
+  @media (max-width: 900px) { .g3, .g4 { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 620px) { .g2, .g3, .g4 { grid-template-columns: 1fr; } }
+
+  .card { background: #fff; border: 1px solid rgba(10, 31, 68, .09); border-radius: var(--r-md); padding: 26px; }
+  .card p:last-child { margin-bottom: 0; }
+  .card .ico {
+    width: 42px; height: 42px; border-radius: 12px; background: var(--pale-mint);
+    display: grid; place-items: center; font-size: 1.15rem; margin-bottom: 14px;
+  }
+  .pain { background: rgba(244, 248, 255, .06); border: 1px solid rgba(244, 248, 255, .14); border-radius: var(--r-md); padding: 24px; }
+  .pain strong { display: block; font-family: 'Poppins', sans-serif; font-size: 1.05rem; margin-bottom: 6px; color: var(--on-navy); }
+
+  .steps { counter-reset: s; }
+  .step { display: flex; gap: 18px; padding: 22px 0; border-top: 1px solid rgba(10, 31, 68, .1); }
+  .step:first-child { border-top: 0; }
+  .step .num {
+    flex: 0 0 40px; height: 40px; border-radius: 50%; background: var(--navy); color: var(--mint);
+    display: grid; place-items: center; font-family: 'Poppins', sans-serif; font-weight: 600;
+  }
+  .step p { margin: 0; color: var(--muted-dark); }
+
+  .who { display: flex; flex-wrap: wrap; gap: 10px; padding: 0; margin: 26px 0 0; list-style: none; }
+  .who li { background: #fff; border: 1px solid rgba(10, 31, 68, .12); border-radius: var(--r-pill); padding: 9px 17px; font-size: .92rem; font-weight: 500; }
+
+  /* offer */
+  .offer { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+  @media (max-width: 820px) { .offer { grid-template-columns: 1fr; } }
+  .offer-card { border-radius: var(--r-lg); padding: 32px; }
+  .offer-free { background: var(--pale-mint); color: var(--navy); border: 2px solid var(--mint); }
+  .offer-build { background: #fff; color: var(--navy); border: 1px solid rgba(10, 31, 68, .12); }
+  .price { font-family: 'Poppins', sans-serif; font-size: 2.3rem; font-weight: 600; line-height: 1; margin: 6px 0 4px; }
+  .price small { font-family: 'Inter', sans-serif; font-size: .9rem; font-weight: 500; color: var(--muted-dark); display: block; margin-top: 8px; }
+  .list { list-style: none; padding: 0; margin: 18px 0 24px; }
+  .list li { position: relative; padding-left: 26px; margin-bottom: 10px; font-size: .96rem; }
+  .list li::before { content: "✓"; position: absolute; left: 0; color: var(--deep); font-weight: 700; }
+  .badge { display: inline-block; font-size: .72rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; background: var(--navy); color: var(--mint); padding: 5px 12px; border-radius: var(--r-pill); }
+
+  /* faq */
+  details { border-bottom: 1px solid rgba(10, 31, 68, .12); padding: 18px 0; }
+  summary { font-family: 'Poppins', sans-serif; font-weight: 600; font-size: 1.02rem; cursor: pointer; list-style: none; display: flex; justify-content: space-between; gap: 16px; }
+  summary::-webkit-details-marker { display: none; }
+  summary::after { content: "+"; color: var(--soft); font-size: 1.3rem; line-height: 1; }
+  details[open] summary::after { content: "–"; }
+  details p { margin: 12px 0 0; color: var(--muted-dark); max-width: 46rem; }
+
+  /* final cta */
+  .final { text-align: center; }
+  .final .actions { display: flex; justify-content: center; flex-wrap: wrap; gap: 14px; }
+  .final h2 { max-width: 34rem; margin-inline: auto; }
+  .final .lede { margin-inline: auto; }
+
+  footer { background: var(--navy); color: var(--muted-navy); padding: 40px 0; font-size: .9rem; }
+  footer .wrap { display: flex; flex-wrap: wrap; gap: 14px; justify-content: space-between; align-items: center; }
+  footer a { color: var(--on-navy); text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
 </style>
 </head>
 <body>
-  <main class="wrap">
-    <div class="eyebrow">Coming soon</div>
-    <h1>Mermaid<span>Musings</span></h1>
-    <p class="lede">
-      Something new is taking shape beneath the surface. The full site is on its way —
-      until then, the story is unfolding over on Instagram.
-    </p>
-    <div class="actions">
-      <a class="btn primary" href="https://www.instagram.com/mermaid_musings_club/" target="_blank" rel="noopener">Follow on Instagram</a>
-      <a class="btn ghost" href="mailto:mermaidmusings.1@gmail.com">Get in touch</a>
-    </div>
-    <div class="divider"></div>
-    <footer>&copy; <span id="y">2026</span> Mermaid Musings</footer>
-  </main>
-  <div class="waves" aria-hidden="true">
-    <svg viewBox="0 0 1440 220" preserveAspectRatio="none">
-      <path d="M0,120 C240,180 420,60 720,110 C1020,160 1200,70 1440,120 L1440,220 L0,220 Z" fill="rgba(127,212,193,.10)"/>
-      <path d="M0,150 C260,200 480,100 760,145 C1040,190 1220,110 1440,155 L1440,220 L0,220 Z" fill="rgba(127,212,193,.14)"/>
-    </svg>
+
+<header>
+  <div class="wrap">
+    <a class="wordmark" href="#top">Simpli<em>Run</em></a>
+    <nav class="nav">
+      <a class="navlink" href="#problem">Why</a>
+      <a class="navlink" href="#what">What you get</a>
+      <a class="navlink" href="#how">How it works</a>
+      <a class="navlink" href="#offer">Pricing</a>
+      <a class="btn btn-primary" href="#start">Free setup</a>
+    </nav>
   </div>
-  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="dark hero">
+    <div class="wrap hero-grid">
+      <div>
+        <p class="eyebrow">Business Operations Made Simple</p>
+        <h1>Stop losing customers to the calls you can't answer.</h1>
+        <p class="lede">
+          SimpliRun is an all-in-one system that answers your phone, books the appointment,
+          takes the payment and follows up — automatically, in your business's own voice.
+          You get your day back; nothing falls through the cracks.
+        </p>
+        <div class="actions">
+          <a class="btn btn-primary" href="#start">Get your free AI receptionist setup</a>
+          <a class="btn btn-secondary" href="#how">See how it works</a>
+        </div>
+        <ul class="trust">
+          <li><span class="tick">✓</span> Free setup, no card needed</li>
+          <li><span class="tick">✓</span> Built for you, not a DIY tool</li>
+          <li><span class="tick">✓</span> Live in about a week</li>
+        </ul>
+      </div>
+      <div class="mock" aria-hidden="true">
+        <div class="mock-head"><span class="dot"></span> Missed call · Tuesday 2:14 PM</div>
+        <div class="bubble us">Hi, this is the front desk at your service — sorry we missed you! Can I help you book something?</div>
+        <div class="bubble them">Yes, do you have anything Thursday afternoon?</div>
+        <div class="bubble us">We have Thursday 3:30 PM open. Shall I put you down?</div>
+        <div class="bubble them">Perfect, yes please.</div>
+        <div class="mock-foot">✓ Booked · ✓ Deposit collected · ✓ Reminder scheduled · ✓ Owner never touched the phone</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROBLEM -->
+  <section id="problem">
+    <div class="wrap">
+      <p class="eyebrow on-light">The real problem</p>
+      <h2>You're not short on customers. You're short on hands.</h2>
+      <p class="lede" style="color: var(--muted-dark)">
+        When you're on a job, with a client, or finally sitting down to dinner, the business
+        keeps ringing. Here's where the money quietly leaks out:
+      </p>
+      <div class="grid g4" style="margin-top: 28px">
+        <div class="card"><div class="ico">📵</div><h3>Missed calls</h3><p>A caller who reaches voicemail usually calls the next business on the list instead of leaving a message.</p></div>
+        <div class="card"><div class="ico">🕓</div><h3>Slow replies</h3><p>Leads from your website, Instagram or Google sit unanswered for hours — long after they've decided.</p></div>
+        <div class="card"><div class="ico">📋</div><h3>Manual scheduling</h3><p>Phone tag, double bookings and no-shows, all tracked in your head or on paper.</p></div>
+        <div class="card"><div class="ico">💸</div><h3>No follow-up</h3><p>Quotes go out and go cold. Past customers never hear from you again unless you remember.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT YOU GET -->
+  <section id="what" class="dark">
+    <div class="wrap">
+      <p class="eyebrow">What you get</p>
+      <h2>One system that runs the front of your business.</h2>
+      <p class="lede">Not another app to learn. We build it, connect it and hand it over working.</p>
+      <div class="grid g3" style="margin-top: 30px">
+        <div class="pain"><strong>📞 AI receptionist</strong><p>Answers every call and text, day or night, in your business's tone. Books, answers common questions, and passes real emergencies to you.</p></div>
+        <div class="pain"><strong>📅 Scheduling</strong><p>A real calendar behind the scenes: availability, confirmations, reminders and rescheduling — without the phone tag.</p></div>
+        <div class="pain"><strong>💳 Payments &amp; deposits</strong><p>Deposits and invoices sent and collected automatically, so you stop chasing money you've already earned.</p></div>
+        <div class="pain"><strong>🔁 Follow-up that never forgets</strong><p>Every new lead gets an instant reply. Every quote gets a nudge. Every past customer hears from you again.</p></div>
+        <div class="pain"><strong>📣 Outreach on autopilot</strong><p>Review requests, reactivation messages and seasonal offers going out in the background, on a schedule.</p></div>
+        <div class="pain"><strong>📊 One clear dashboard</strong><p>Calls answered, appointments booked, money collected — in one place, so you know what's actually working.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section id="how" class="light-blue">
+    <div class="wrap">
+      <p class="eyebrow on-light">How it works</p>
+      <h2>Three steps, and you're mostly out of it.</h2>
+      <div class="steps" style="margin-top: 26px">
+        <div class="step"><div class="num">1</div><div><h3>A 20-minute call</h3><p>You walk us through how your business actually works: what people call about, how you like to book, what you charge. No tech talk.</p></div></div>
+        <div class="step"><div class="num">2</div><div><h3>We build it for you</h3><p>We set up your receptionist, calendar, payment links and follow-up sequences, then test it with real calls until it sounds right.</p></div></div>
+        <div class="step"><div class="num">3</div><div><h3>It runs — you watch it work</h3><p>You go back to the work you're good at. Calls get answered, jobs get booked, and you can see all of it in one dashboard.</p></div></div>
+      </div>
+      <p class="eyebrow on-light" style="margin-top: 42px">Who it's for</p>
+      <h3 style="font-size:1.25rem">Solo and small-team owners doing real volume, with no one to answer the phone.</h3>
+      <ul class="who">
+        <li>Painters &amp; trades</li><li>Doctor &amp; PT offices</li><li>Gyms &amp; studios</li>
+        <li>Laundromats</li><li>Hair &amp; wellness salons</li><li>Health coaches</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- OFFER -->
+  <section id="offer">
+    <div class="wrap">
+      <p class="eyebrow on-light">Getting started</p>
+      <h2>Start free. Build the whole thing when you're convinced.</h2>
+      <div class="offer" style="margin-top: 28px">
+        <div class="offer-card offer-free">
+          <span class="badge">Start here</span>
+          <div class="price">Free<small>AI receptionist setup — no card, no contract</small></div>
+          <ul class="list">
+            <li>We set up an AI receptionist for your business</li>
+            <li>Trained on your services, hours and pricing</li>
+            <li>Answers calls and texts so you stop missing work</li>
+            <li>You hear it working before you spend anything</li>
+          </ul>
+          <a class="btn btn-primary" href="#start">Get my free setup</a>
+        </div>
+        <div class="offer-card offer-build">
+          <h3 style="margin-bottom:4px">SimpliRun Complete Build</h3>
+          <div class="price">$4,500<small>One-time build, done for you</small></div>
+          <ul class="list">
+            <li>Everything in the free setup, fully built out</li>
+            <li>Scheduling, payments and deposits connected</li>
+            <li>Follow-up and outreach sequences written for your business</li>
+            <li>Dashboard, testing and handover — set up end to end</li>
+          </ul>
+          <a class="btn btn-outline-dark" href="#start">Talk about the full build</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="light-blue">
+    <div class="wrap" style="max-width: 820px">
+      <p class="eyebrow on-light">Questions</p>
+      <h2>Straight answers</h2>
+      <div style="margin-top: 20px">
+        <details open><summary>Will it sound like a robot?</summary><p>It answers in natural conversation, using your business name, services and hours. Callers can ask normal questions and get real answers — and anything it shouldn't handle gets passed straight to you.</p></details>
+        <details><summary>Do I have to change my phone number?</summary><p>No. Your existing number keeps working; calls you don't pick up get answered instead of going to voicemail.</p></details>
+        <details><summary>How long does setup take?</summary><p>The free receptionist setup is quick — typically a few days after our call. A Complete Build is usually live in about a week.</p></details>
+        <details><summary>I'm not technical at all. Is that a problem?</summary><p>Not at all — that's the point. This is done for you, not handed to you as software to configure. If you can answer questions about your own business, you can do this.</p></details>
+        <details><summary>What if I want to stop?</summary><p>The free setup has no contract and no card. Nothing continues that you haven't agreed to.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section id="start" class="dark final">
+    <div class="wrap">
+      <p class="eyebrow">Free AI receptionist setup</p>
+      <h2>Let's get your phone answered this week.</h2>
+      <p class="lede">
+        Tell us a little about your business and we'll set up your AI receptionist free —
+        so you can hear it answer a real call before you decide anything.
+      </p>
+      <div class="actions">
+        <a class="btn btn-primary" href="mailto:mermaidmusings.1@gmail.com?subject=Free%20AI%20receptionist%20setup&body=Hi%20SimpliRun%2C%0A%0AI%27d%20like%20the%20free%20AI%20receptionist%20setup.%0A%0ABusiness%20name%3A%20%0AWhat%20we%20do%3A%20%0ABest%20number%20to%20reach%20me%3A%20%0ABiggest%20headache%20right%20now%3A%20%0A%0AThanks%21">Get my free setup</a>
+        <a class="btn btn-secondary" href="mailto:mermaidmusings.1@gmail.com?subject=Question%20about%20SimpliRun">Ask a question first</a>
+      </div>
+      <p class="cta-note">No card, no contract. We'll reply personally, usually the same day.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div><span class="wordmark" style="font-size:1.1rem">Simpli<em>Run</em></span> &nbsp;·&nbsp; Business Operations Made Simple.</div>
+    <div>&copy; <span id="y">2026</span> SimpliRun &nbsp;·&nbsp; <a href="mailto:mermaidmusings.1@gmail.com">Contact</a></div>
+  </div>
+</footer>
+
+<script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>
 </html>
